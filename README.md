@@ -47,11 +47,6 @@ pip install tensorflow
 
 学習は、```python cnn.py```を実行することでできます。
 
-## 私の環境での精度
-```bash
-python cnn.py
-
-```
 
 ## 参考文献
 - https://gist.github.com/fchollet/0830affa1f7f19fd47b06d4cf89ed44d
