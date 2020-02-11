@@ -69,7 +69,7 @@ class DataGeneratorFactory:
   def pred_gen_using_raw_image(self,image):
       #TODO ここでカメラからの入力画像を受け付ける　imreadの部分
       #image = cv2.imread(os.environ['HOME']+"/DATA/NicoTechDice/DiceDataset/train/1/00239.png",cv2.IMREAD_GRAYSCALE)
-      image = cv2.resize(image,(128, 128))
+      image = cv2.resize(image,(64, 64))
       print(image)
       print(image.shape)
       image=np.reshape(image,(1,image.shape[0],image.shape[1],1))

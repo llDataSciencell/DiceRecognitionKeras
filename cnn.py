@@ -1,21 +1,21 @@
-#!/usr/bin/env python
+# 参考資料: https://github.com/keras-team/keras/tree/master/examples
 
 import math
 import pandas as pd
 from keras.models import Model, Sequential,load_model
 from keras.optimizers import Adam
-from keras.layers import Conv2D, Dense, Dropout, Flatten
+from keras.layers import Conv2D, Dense, Dropout, Flatten, Convolution1D
 import data_generator # DataGeneratorFactory クラスが記述されているファイルをimport
 import os
 from keras.callbacks import EarlyStopping,ModelCheckpoint
 NUM_EPOCHS = 20 #TODO エポック数を必要に応じて増やす
 BATCH_SIZE = 16
-INPUT_SHAPE=(128,128)
+INPUT_SHAPE=(64,64)
 
 def get_model():
   model = Sequential()
   model.add(Conv2D(12, (3, 3), activation='relu',
-                   input_shape=(128, 128, 1)))
+                   input_shape=(64, 64, 1)))
   model.add(Conv2D(24, (3, 3), activation='relu'))
   model.add(Conv2D(48, (3, 3), activation='relu'))
   model.add(Conv2D(64, (3, 3), activation='relu'))
@@ -27,7 +27,7 @@ def get_model():
 
 def train():
   model = get_model()
-  model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.0005, beta_1=0.9, beta_2=0.999),
+  model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.0001, beta_1=0.9, beta_2=0.999),
                 metrics=['accuracy'])
 
   data_directory=os.environ['HOME']+"/DATA/NicoTechDice/DiceDataset/"
