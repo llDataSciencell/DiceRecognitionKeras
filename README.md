@@ -1,7 +1,12 @@
+# DiceRecognitionDatasetForML
+author: うえぽん(Co-Founder of Kanazawa AI Meetup)
+
+ディープラーニング を使用して、サイコロの目を認識します。現段階のバージョン（2020年2月11日作成）で70%程度の認識率です。<a href="https://github.com/tomitomi3/DiceRecognitionDatasetForML">DiceRecognitionDatasetForML</a>のデータセットに対して、画像認識を行いました。
+
 # インストール方法
 
-
-- DiceDataset_20181214.zipは私の環境では```~/DATA/NicoTechDice/DiceDataset```に展開しました。
+- サイコロのデータセットをダウンロードします。(https://github.com/tomitomi3/DiceRecognitionDatasetForML)
+- DiceDataset_20181214.zipを私の環境では```~/DATA/NicoTechDice/DiceDataset```に展開しました。
 - ファイルやフォルダはmake_data_directory.pyを使用して以下のように配置してください。
 ```
 DiceDataset/

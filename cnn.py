@@ -50,10 +50,10 @@ def train():
       validation_steps=math.ceil(dgf.valid_size / BATCH_SIZE),
       epochs=NUM_EPOCHS, verbose=1,callbacks=[early_stopping_callback])#,checkpoint_callback])
   
-  print(history)
-
   model.save('../models/model_cnn_dice_20200211.h5')
   #model = load_model('../models/model_cnn_dice.h5')
+  print(history)
+
   metrics = model.evaluate_generator(dgf.test_generator, steps=dgf.test_size)
   print("Evaluate Accuracy for test dataset...")
   for i in range(len(model.metrics_names)):
